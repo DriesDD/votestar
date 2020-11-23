@@ -1,5 +1,6 @@
 {
   "name": "svelte-app",
+  "config": {"port" : "process.env.PORT"},
   "version": "1.0.0",
   "engines": {
     "node": "12.18.3",
@@ -9,7 +10,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "heroku-postbuild": "sirv public --host $HOST --port $PORT"
+    "heroku-postbuild": "sirv public --host 0.0.0.0 --port $npm_package_config_port"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
